@@ -3,5 +3,5 @@ export default {
   gameWidth: 800,
   gameHeight: 600,
   baseUrl: 'https://us-central1-js-capstone-backend.cloudfunctions.net/api',
-  gameURL:'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/I8UTP8sksy7XzfOH80o2/scores'
-}
+  gameURL: 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/E7yTiPeg2E6VF0yTp1vv/scores',
+};

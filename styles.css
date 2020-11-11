@@ -34,8 +34,6 @@
   font-family: cursive;
   font-weight: bold;
   outline: none;
-  /* border: 2px dashed white; */
-  /* border: none; */
 }
 
 #savePlayer:hover {
@@ -49,7 +47,8 @@
   border-radius: 10px;
   padding: 15px 30px;
   font-size: 20px;
-  background: black;
+  /* background: url(./src/assets/title_background.jpg); */
+  font-family: cursive;
 }
 
 .score {
