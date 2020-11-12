@@ -13,7 +13,7 @@ export default class GameScene extends Phaser.Scene {
 
     this.stars = this.physics.add.group();
 
-    for (let i = 2; i < 6; i + 1) {
+    for (let i = 2; i < 6; ++i) {
       const x = 250 * i;
       const y = Phaser.Math.Between(200, 350);
       const platform = this.platforms.create(x, y, 'platform');
@@ -82,7 +82,7 @@ export default class GameScene extends Phaser.Scene {
     const y = platform.y - (platform.displayHeight + 30);
     const a = Phaser.Math.Between(2, 3);
 
-    for (let i = 1; i <= a; i + 1) {
+    for (let i = 1; i <= a; ++i) {
       x += 50;
       this.stars.create(x, y, 'star').setOrigin(0, 0);
     }
