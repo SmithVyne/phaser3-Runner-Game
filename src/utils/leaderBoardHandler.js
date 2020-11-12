@@ -1,4 +1,4 @@
-import gameDefaults from '../config/gameDefaults';
+// import gameDefaults from '../config/gameDefaults';
 
 // const createGameURL = (response) => {
 //   const gameId = response.split(' ')[3];

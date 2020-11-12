@@ -6,9 +6,6 @@ export default class TitleScene extends Phaser.Scene {
     super('Title');
   }
 
-  preload() {
-  }
-
   create() {
     const { gameWidth, gameHeight } = gameDefaults;
 
@@ -27,6 +24,7 @@ export default class TitleScene extends Phaser.Scene {
     const inputText = document.createElement('input');
     inputText.type = 'text';
     inputText.placeholder = '@nickname';
+    inputText.required = true;
     inputText.id = 'playerName';
     this.add.dom(gameWidth / 2, gameHeight / 2, inputText);
 
@@ -38,9 +36,10 @@ export default class TitleScene extends Phaser.Scene {
     startBtnObj.addListener('click');
     startBtnObj.on('click', () => {
       const plyrName = document.getElementById('playerName').value;
-      console.log(plyrName);
-      gameDefaults.playerName = plyrName;
-      this.scene.start('Game');
+      if (plyrName) {
+        gameDefaults.playerName = plyrName;
+        this.scene.start('Game');
+      }
     });
   }
 }

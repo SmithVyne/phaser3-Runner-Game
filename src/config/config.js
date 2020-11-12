@@ -1,9 +1,9 @@
 import Phaser from 'phaser';
 
 import BootScene from '../scenes/BootScene';
-import TitleScene from '../Scenes/TitleScene';
-import GameScene from '../Scenes/GameScene';
-import PreloaderScene from '../Scenes/PreloaderScene';
+import TitleScene from '../scenes/TitleScene';
+import GameScene from '../scenes/GameScene';
+import PreloaderScene from '../scenes/PreloaderScene';
 import GameOver from '../scenes/GameOver';
 import gameDefaults from './gameDefaults';
 

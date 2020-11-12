@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import gameDefaults from '../config/gameDefaults';
 import { getAllScores } from '../utils/leaderBoardHandler';
+import capitalize from '../utils/capitalizeString';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -31,7 +32,6 @@ export default class GameOver extends Phaser.Scene {
 
     const leaderDivObj = this.add.dom(gameWidth / 2, gameHeight / 2 + 50, leaderDiv);
     leaderDivObj.setOrigin(0.5, 0);
-    console.log(scores);
 
     this.count = scores.length;
     this.counter = 0;
@@ -44,19 +44,16 @@ export default class GameOver extends Phaser.Scene {
   update() {
     if (this.count > 10 && this.counter < this.count * 12.5) {
       this.camera.scrollY += 1.5;
-      this.counter++;
+      this.counter += 1;
     }
   }
 
   addScoreToDisplay(leaderDiv, user, score) {
     leaderDiv.innerHTML += `
     <div class='score'>
-      <span>${this.capitalize(user)}</span>
+      <span>${capitalize(user)}</span>
       <span>${score} pts</span>
     </div>`;
-  }
-
-  capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return this;
   }
 }

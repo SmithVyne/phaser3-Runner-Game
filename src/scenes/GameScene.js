@@ -7,17 +7,13 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
-  preload() {
-  }
-
   create() {
-    const camera = this.cameras.main;
     this.add.image(400, 300, 'background').setScrollFactor(0, 0);
     this.platforms = this.physics.add.staticGroup();
 
     this.stars = this.physics.add.group();
 
-    for (let i = 2; i < 6; ++i) {
+    for (let i = 2; i < 6; i + 1) {
       const x = 250 * i;
       const y = Phaser.Math.Between(200, 350);
       const platform = this.platforms.create(x, y, 'platform');
@@ -86,7 +82,7 @@ export default class GameScene extends Phaser.Scene {
     const y = platform.y - (platform.displayHeight + 30);
     const a = Phaser.Math.Between(2, 3);
 
-    for (let i = 1; i <= a; ++i) {
+    for (let i = 1; i <= a; i + 1) {
       x += 50;
       this.stars.create(x, y, 'star').setOrigin(0, 0);
     }
@@ -104,14 +100,14 @@ export default class GameScene extends Phaser.Scene {
   gameOver() {
     gameDefaults.playerScore = this.score;
     const { gameURL } = gameDefaults;
-    createNewScore(gameDefaults.playerName, this.score, gameURL)
-    && this.scene.start('GameOver');
+    createNewScore(gameDefaults.playerName, this.score, gameURL);
+    this.scene.start('GameOver');
   }
 
   jump() {
     if (this.playerJumps < 2) {
       this.player.setVelocityY(-250);
-      this.playerJumps++;
+      this.playerJumps += 1;
     } else if (this.player.body.touching.down && this.playerJumps >= 2) {
       this.player.setVelocityY(-250);
       this.playerJumps = 1;
