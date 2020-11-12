@@ -47,7 +47,6 @@
   border-radius: 10px;
   padding: 15px 30px;
   font-size: 20px;
-  /* background: url(./src/assets/title_background.jpg); */
   font-family: cursive;
 }
 
@@ -56,4 +55,3 @@
   display: flex;
   justify-content: space-between;
 }
-
