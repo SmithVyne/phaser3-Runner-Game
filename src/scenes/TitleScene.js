@@ -25,6 +25,7 @@ export default class TitleScene extends Phaser.Scene {
     inputText.type = 'text';
     inputText.placeholder = '@nickname';
     inputText.required = true;
+    inputText.autocomplete = 'off';
     inputText.id = 'playerName';
     this.add.dom(gameWidth / 2, gameHeight / 2, inputText);
 
