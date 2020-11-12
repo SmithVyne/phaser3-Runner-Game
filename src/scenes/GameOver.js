@@ -16,36 +16,27 @@ export default class GameOver extends Phaser.Scene {
     const {
       gameWidth, gameHeight, playerName, playerScore,
     } = gameDefaults;
-    this.add.text(gameWidth / 2, gameHeight / 2 - 100, 'Game Over', { fontFamily: 'cursive', fontSize: '32px', fill: 'red' }).setOrigin(0.5, 0.5);
-    this.add.text(gameWidth / 2, gameHeight / 2, 'LeaderBoard', { fontFamily: 'cursive', fontSize: '32px', fill: 'white' }).setOrigin(0.5, 0.5);
-    const { gameURL } = gameDefaults;
-    const scores = await getAllScores(gameURL);
-    scores.sort((a, b) => b.score - a.score);
+    this.add.text(gameWidth / 2, gameHeight / 2 - 204, 'Game Over', { fontFamily: 'cursive', fontSize: '32px', fill: 'red' }).setOrigin(0.5, 0.5);
+    this.add.text(gameWidth / 2, gameHeight / 2 - 104, 'LeaderBoard', { fontFamily: 'cursive', fontSize: '32px', fill: 'white' }).setOrigin(0.5, 0.5);
 
     const leaderDiv = document.createElement('div');
     leaderDiv.id = 'leaderDiv';
+    const { gameURL } = gameDefaults;
 
+    const scores = await getAllScores(gameURL);
     scores.push({ user: playerName, score: playerScore });
+    scores.sort((a, b) => b.score - a.score);
+    scores.splice(10)
+    
     scores.forEach((item) => {
       this.addScoreToDisplay(leaderDiv, item.user, item.score);
     });
 
-    const leaderDivObj = this.add.dom(gameWidth / 2, gameHeight / 2 + 50, leaderDiv);
+    const leaderDivObj = this.add.dom(gameWidth / 2, gameHeight / 2 - 54, leaderDiv);
     leaderDivObj.setOrigin(0.5, 0);
 
-    this.count = scores.length;
-    this.counter = 0;
-
-    this.input.keyboard.once('keydown_SPACE', () => {
-      this.scene.start('game');
-    });
-  }
-
-  update() {
-    if (this.count > 10 && this.counter < this.count * 12.5) {
-      this.camera.scrollY += 1.5;
-      this.counter += 1;
-    }
+    const playAgain = this.input.keyboard.addKey('SPACE');
+    playAgain.on('down', () => this.scene.start('Game'), this);
   }
 
   addScoreToDisplay(leaderDiv, user, score) {

@@ -14,9 +14,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('platform', platform);
     this.load.image('star', star);
     this.load.audio('impact', impact);
-    // for (var i = 0; i < 50; i++) {
-    //   this.load.image('background'+i, background);
-    // }
 
     const { width } = this.cameras.main;
     const { height } = this.cameras.main;
