@@ -1,5 +1,5 @@
-# Shooting Game
-This is a custom implementation of the popular space shooter game using the [Phaser](https://phaser.io/) library.
+# Ballie d Runner
+# A Phaser JS and Webpack project
 
 ## Outline
 - [Live version](#Live-version)
