@@ -1,4 +1,5 @@
 import '@babel/polyfill';
+import '../styles.css';
 import Phaser from 'phaser';
 import config from './config/config';
 
