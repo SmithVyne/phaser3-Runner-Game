@@ -26,5 +26,6 @@ export default {
   dom: {
     createContainer: true,
   },
+  autoCenter: true,
   scene: [BootScene, PreloaderScene, TitleScene, GameScene, GameOver],
 };
