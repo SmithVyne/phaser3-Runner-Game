@@ -16,12 +16,15 @@
 The game is hosted here => [ballDeyRun](https://balldeyrun.netlify.app/).
 
 ## UI Preview
-
+|                |                |
+|----------------|----------------|
+|<img src='./docs/title-scene.png' />|<img src='./docs/game-scene1.png' />|
+|<img src='./docs/game-scene2.png' />|<img src='./docs/gameOver-scene.png' />|
 
 
 
 ## Description
-  This is basically a shooter desktop game, a single-player game.
+  This is platform runner game. The player(ball) moves over platforms collecting stars and trying no to fall off.
   The game can be controlled with the following arrows keys;
   ###  
         ====== Movement =====
@@ -41,7 +44,7 @@ The game is hosted here => [ballDeyRun](https://balldeyrun.netlify.app/).
 
             ====== Tip ======
 
-            Try to get as much stars as you can
+            Try to get as many stars as you can
                   
           
   ## Scoring
@@ -51,6 +54,7 @@ The game is hosted here => [ballDeyRun](https://balldeyrun.netlify.app/).
   Much appreciation goes to the following for making available the assets used for making this game
 
   a. Impact Sounds- [Kenney.nl](https://kenney.nl/assets/impact-sounds).
+  b. [@Ourcade](https://twitter.com/OurcadeHQ?s=20) for tutorials and assets.
 
 ## Technologies
 - The game was developed with [Phaser](https://phaser.io/).
@@ -58,6 +62,7 @@ The game is hosted here => [ballDeyRun](https://balldeyrun.netlify.app/).
 - Javascript
 - CSS
 - [Webpack 4](https://webpack.js.org/) for managing javascript assets.
+- [Babel](https://babeljs.io/)
 - [Github Actions](https://github.com/features/actions) for CI.
 
 
@@ -75,6 +80,9 @@ Follow the steps below run the game in a local environment; First ensure you hav
 webpack will automatically serve the compiled build on http://localhost:8080/.
 
 ## Unit-Tests
+After cloning this repo, in your terminal
+1. Run  ```npm install``` to install project dependencies.
+2. Run ```npm run test ``` to run the unit tests locally.
 
 
 ## Author
