@@ -26,8 +26,8 @@ export default class GameOver extends Phaser.Scene {
     const scores = await getAllScores(gameURL);
     scores.push({ user: playerName, score: playerScore });
     scores.sort((a, b) => b.score - a.score);
-    scores.splice(10)
-    
+    scores.splice(10);
+
     scores.forEach((item) => {
       this.addScoreToDisplay(leaderDiv, item.user, item.score);
     });

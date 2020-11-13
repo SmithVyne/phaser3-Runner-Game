@@ -21,4 +21,4 @@ describe('Creates a new player and receives an array of players\' scores', () =>
     const a = await expect(getAllScores(url));
     expect(a).toBeInstanceOf(Object);
   });
-})
+});
