@@ -1,55 +1,102 @@
-# Phaser 3 Webpack Project Template
+# Ballie d Runner
+# A Phaser JS and Webpack project
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+## Outline
+- [Live version](#Live-version)
+- [UI Preview](#UI-Preview)
+- [Description](#Description)
+- [Credits](#Credits)
+- [Technologies used](#Technologies)
+- [Installation](#Installation)
+- [Unit Tests](#Unit-Tests)
+- [Author](#author)
+- [Licence](#licence)
 
-Loading images via JavaScript module `import` is also supported.
+## Live version
+The game is hosted here => [ballDeyRun](https://balldeyrun.netlify.app/).
 
-## Requirements
-
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
-
-## Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
-
-## Writing Code
-
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+## UI Preview
+|                |                |
+|----------------|----------------|
+|<img src='./docs/title-scene.png' />|<img src='./docs/game-scene1.png' />|
+|<img src='./docs/game-scene2.png' />|<img src='./docs/gameOver-scene.png' />|
 
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
 
-## Customizing Template
+## Description
+  This is platform runner game. The player(ball) moves over platforms collecting stars and trying no to fall off.
+  The game can be controlled with the following arrows keys;
+  ###  
+        ====== Movement =====
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+                Use Key:
 
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
+                  UP - To move UP
+                  DOWN - To stop bouncing
+                  LEFT - To move LEFT
+                  RIGHT -  To move RIGHT
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
+            ====== New Game ======
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+            Use Key:
+            
+              SPACE BAR - To start a new game after failing
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
+            ====== Tip ======
+
+            Try to get as many stars as you can
+                  
+          
+  ## Scoring
+  You get 2 to 3 points for collecting a star.
+
+## Credits
+  Much appreciation goes to the following for making available the assets used for making this game
+
+  a. Impact Sounds- [Kenney.nl](https://kenney.nl/assets/impact-sounds).
+  
+  b. [@Ourcade](https://twitter.com/OurcadeHQ?s=20) for tutorials and assets.
+
+## Technologies
+- The game was developed with [Phaser](https://phaser.io/).
+- HTML5
+- Javascript
+- CSS
+- [Webpack 4](https://webpack.js.org/) for managing javascript assets.
+- [Babel](https://babeljs.io/)
+- [Github Actions](https://github.com/features/actions) for CI.
+
+
+## Installation
+Follow the steps below run the game in a local environment; First ensure you have [Node.js](https://nodejs.org).
+
+1. Clone the repository from a terminal 
+    ```git clone https://github.com/SmithVyne/phaser3-Runner-Game.git```.
+2. Navigate to the project directory.
+    ```cd phaser3-Runner-Game```
+3. Install project dependencies.
+    ```npm install```
+4. Start the webback server.
+    ```npm run start```
+webpack will automatically serve the compiled build on http://localhost:8080/.
+
+## Unit-Tests
+After cloning this repo, in your terminal
+1. Run  ```npm install``` to install project dependencies.
+2. Run ```npm run test ``` to run the unit tests locally.
+
+
+## Author
+
+👤 **Smith Nkereuwem**
+
+- Github: [@SmithVyne](https://github.com/SmithVyne)
+- Twitter: [@SmithVyne](https://twitter.com/SmithVyne)
+- Email: [email me](smithnkereuwem2@gmail.com)
+
+## Show your support
+
+Give an ⭐️ if you like this project!
+
+## Licence
+- MIT
