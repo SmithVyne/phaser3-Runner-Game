@@ -7,6 +7,7 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    this.sound.play('theme');
     const { gameWidth, gameHeight } = gameDefaults;
 
     // Background and Ball logo

@@ -26,7 +26,7 @@ export default class GameScene extends Phaser.Scene {
     }
 
     this.playerJumps = 0;
-    this.player = this.physics.add.image(405, 0, 'ball').setBounce(0.8);
+    this.player = this.physics.add.image(405, 51, 'ball').setBounce(0.8);
     this.player.displayWidth = 40;
     this.player.displayHeight = 40;
     this.physics.add.collider(this.platforms, this.player);
@@ -35,9 +35,6 @@ export default class GameScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.scoreBoard = this.add.text(300, 16, 'Score: 0', { fontFamily: 'cursive', fontSize: '28px', fill: '#000' }).setScrollFactor(0, 0);
     this.score = 0;
-
-    const keyUp = this.input.keyboard.addKey('UP');
-    keyUp.on('down', this.jump, this);
   }
 
   update() {
@@ -46,8 +43,8 @@ export default class GameScene extends Phaser.Scene {
       this.player.setVelocityX(250);
     } else if (this.cursors.left.isDown) {
       this.player.setVelocityX(-150);
-    } else if (this.cursors.down.isDown) {
-      this.player.setBounce(0);
+    } else if (this.cursors.up.isDown && this.player.y > 100 ) {
+      this.player.setVelocityY(-250);
     }
 
     camera.scrollX += 2;
@@ -57,16 +54,18 @@ export default class GameScene extends Phaser.Scene {
     const playrX = this.player.x;
     const playrY = this.player.y;
 
-    if (playrX >= camera.midPoint.x) {
+
+    if (playrY < 50 || playrY > 350) {
+      camera.stopFollow();
+    }
+    else {
       camera.startFollow(this.player, false, 0.1, 1);
     }
-    if (playrY < 200 || playrY > 350) {
-      camera.stopFollow();
-      if (playrY > 500) {
-        this.gameOver();
-      }
-    }
 
+    if (playrY > 500) {
+      this.gameOver();
+    }
+    
     this.platforms.children.iterate(child => {
       const platform = child;
       if (platform.x <= left) {
@@ -102,16 +101,5 @@ export default class GameScene extends Phaser.Scene {
     const { gameURL } = gameDefaults;
     createNewScore(gameDefaults.playerName, this.score, gameURL);
     this.scene.start('GameOver');
-  }
-
-  jump() {
-    if (this.playerJumps < 2) {
-      this.player.setVelocityY(-250);
-      this.playerJumps += 1;
-    } else if (this.player.body.touching.down && this.playerJumps >= 2) {
-      this.player.setVelocityY(-250);
-      this.playerJumps = 1;
-    }
-    this.player.setBounce(0.8);
   }
 }

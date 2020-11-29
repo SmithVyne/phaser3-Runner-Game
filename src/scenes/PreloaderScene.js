@@ -3,6 +3,7 @@ import background from '../assets/bg_layer1.png';
 import platform from '../assets/ground_grass.png';
 import star from '../assets/star.png';
 import impact from '../assets/sfx/impactPlate_light.mp3';
+import theme from '../assets/sfx/theme_song.mp3';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -14,6 +15,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('platform', platform);
     this.load.image('star', star);
     this.load.audio('impact', impact);
+    this.load.audio('theme', theme);
 
     const { width } = this.cameras.main;
     const { height } = this.cameras.main;
