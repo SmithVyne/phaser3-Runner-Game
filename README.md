@@ -57,7 +57,7 @@ The game is hosted here => [ballDeyRun](https://balldeyrun.netlify.app/).
   
   b. [@Ourcade](https://twitter.com/OurcadeHQ?s=20) for tutorials and assets.
 
-  c. <div class="attribution-block"><a href="http://dig.ccmixter.org/files/Karstenholymoly/62493">Stardust (Ziggy is coming)</a> by Kraftamt (c) copyright 2020 Licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution Noncommercial  (3.0)</a> license. Ft: Platinum Butterfly</div>
+  <div class="attribution-block">c. <a href="http://dig.ccmixter.org/files/Karstenholymoly/62493">Stardust (Ziggy is coming)</a> by Kraftamt (c) copyright 2020 Licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution Noncommercial  (3.0)</a> license. Ft: Platinum Butterfly</div>
 
 ## Technologies
 - The game was developed with [Phaser](https://phaser.io/).

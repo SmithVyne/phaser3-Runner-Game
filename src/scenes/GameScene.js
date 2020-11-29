@@ -43,7 +43,7 @@ export default class GameScene extends Phaser.Scene {
       this.player.setVelocityX(250);
     } else if (this.cursors.left.isDown) {
       this.player.setVelocityX(-150);
-    } else if (this.cursors.up.isDown && this.player.y > 100 ) {
+    } else if (this.cursors.up.isDown && this.player.y > 100) {
       this.player.setVelocityY(-250);
     }
 
@@ -51,21 +51,19 @@ export default class GameScene extends Phaser.Scene {
     const worldCords = camera.worldView;
     const { left } = worldCords;
     const { right } = worldCords;
-    const playrX = this.player.x;
     const playrY = this.player.y;
 
 
     if (playrY < 50 || playrY > 350) {
       camera.stopFollow();
-    }
-    else {
+    } else {
       camera.startFollow(this.player, false, 0.1, 1);
     }
 
     if (playrY > 500) {
       this.gameOver();
     }
-    
+
     this.platforms.children.iterate(child => {
       const platform = child;
       if (platform.x <= left) {

@@ -35,6 +35,8 @@ export default class GameOver extends Phaser.Scene {
     const leaderDivObj = this.add.dom(gameWidth / 2, gameHeight / 2 - 54, leaderDiv);
     leaderDivObj.setOrigin(0.5, 0);
 
+    this.add.text(gameWidth / 2, gameHeight, 'Press SPACE BAR to Play Again', { fontFamily: 'cursive', fontSize: '16px', fill: 'red' }).setOrigin(0.5, 1);
+
     const playAgain = this.input.keyboard.addKey('SPACE');
     playAgain.on('down', () => this.scene.start('Game'), this);
   }
